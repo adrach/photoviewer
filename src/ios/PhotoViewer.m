@@ -121,8 +121,9 @@
 
 - (NSURL *)localFileURLForImage:(NSString *)image
 {
-    NSString* webStringURL = [image stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
-    NSURL* fileURL = [NSURL URLWithString:webStringURL];
+    // NSString* webStringURL = [image stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+    // NSURL* fileURL = [NSURL URLWithString:webStringURL];
+    NSURL* fileURL = [NSURL URLWithString:image];
 
     if (copyToReference && ![fileURL isFileReferenceURL]) {
         NSData *data = [NSData dataWithContentsOfURL:fileURL];
